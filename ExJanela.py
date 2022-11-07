@@ -3,9 +3,8 @@ import PySimpleGUI as sg
 def tela_login():
     sg.theme('Black')
     layout=[
-        [sg.Text('Usuario'),sg.Input(key='usuario')],
-        [sg.Text('Senha'),sg.Input(key='senha',password_char='*')],
-        [sg.Button('Entrar')]
+        [sg.Text('Bem - vindo Ao Jogo'),sg.Input(key='usuario')],
+        [sg.Button('Jogar')]
     ]
     return sg.Window('Tela de Login',layout=layout, finalize = True)
  
@@ -18,7 +17,7 @@ def tela_pedido():
     ]
  
     return sg.Window('Tela do pedido', layout=layout, finalize= True)
- 
+
 janela1, janela2 = tela_login(), None
  
 while True:
@@ -28,7 +27,7 @@ while True:
         break
     if janela == janela2 and evento == sg.WINDOW_CLOSED:
         break
-    if valores['usuario'] == 'gustavinho ak trovao' and valores['senha'] == 'aktrovao':
+    if valores['usuario'] == 'gustavinho ak trovao':
         janela2 = tela_pedido()
         janela1.hide()
     else:
